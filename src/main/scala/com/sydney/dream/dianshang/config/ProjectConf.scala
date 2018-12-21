@@ -24,7 +24,7 @@ object ProjectConf {
       * @param key key，需要取的值得key
       * @return 返回key对应的值 key=value
       */
-    def getProperty(key: String): String = {
+    def getString(key: String): String = {
         prop.getProperty(key)
     }
 
@@ -34,7 +34,7 @@ object ProjectConf {
       * @return value转化后的Boolean 对象
       */
     def getInterger(key: String): Int = {
-        val value = getProperty(key)
+        val value = getString(key)
         try {
             Integer.valueOf(value)
         } catch {
@@ -50,7 +50,7 @@ object ProjectConf {
       * @return Boolean对象
       */
     def getBoolean(key: String): Boolean = {
-        val value = getProperty(key)
+        val value = getString(key)
         try {
             java.lang.Boolean.valueOf(value)
         } catch {
